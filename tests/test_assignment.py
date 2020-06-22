@@ -24,11 +24,11 @@ class AssignmentTest(unittest.TestCase):
     	# GIVEN
         stream = [1, 2, 0, 3]
         # THEN
-        self.assertTrue(CourseWareB.is_user_right(stream))
+        self.assertTrue(CourseWareB.right_ans(stream))
 
         stream = [2, 1, 1, 3]
         # THEN
-        self.assertTrue(CourseWareB.is_user_right(stream))      
+        self.assertTrue(CourseWareB.right_ans(stream))      
 
 
 if __name__ == "__main__":
