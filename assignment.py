@@ -6,7 +6,7 @@ import json
 class CourseWareB(StreamAdapter):
 
 	@classmethod
-	def load_state(cls, raw_state: str) -> Hashable:
+	def load_raw_state(cls, raw_state: str) -> Hashable:
 		state = json.loads(raw_state).get("commonComponentState")
 		panel_state = (0, 0, 0, 0)
 		if state is not None:
@@ -15,7 +15,7 @@ class CourseWareB(StreamAdapter):
 		return panel_state
 
 	@classmethod
-	def right_ans(cls, stream: Iterable) -> bool:
+	def is_user_right(cls, stream: Iterable) -> bool:
 		right_ans = (1, 2, 0, 3)
 		return tuple(stream) == right_ans
 
